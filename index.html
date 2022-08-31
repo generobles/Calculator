@@ -6,30 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="calculator">
-    <div id="display"></div>
+    <div class="control-panel"></div>
+    <div id="display">
+      <p class="input right">1234567890</p>
+      <p class="output right">1234567890</p>
+    </div>
     <div class="buttons">
         <button class="button" id="clear">AC</button>
-        <button class="button" id="plus-minus">±</button>
+        <button class="button" id="delete">C</button>
         <button class="button" id="percent">%</button>
         <button class="button" id="divide">÷</button>
-        <button class="button">7</button>
-        <button class="button">8</button>
-        <button class="button">9</button>
+        <button class="button num">7</button>
+        <button class="button num">8</button>
+        <button class="button num">9</button>
         <button class="button" id="multiply">×</button>
-        <button class="button">4</button>
-        <button class="button">5</button>
-        <button class="button">6</button>
+        <button class="button num">4</button>
+        <button class="button num">5</button>
+        <button class="button num">6</button>
         <button class="button" id="subtract">-</button>
-        <button class="button">1</button>
-        <button class="button">2</button>
-        <button class="button">3</button>
+        <button class="button num">1</button>
+        <button class="button num">2</button>
+        <button class="button num">3</button>
         <button class="button" id="add">+</button>
     </div>
     <div class="bot-buttons">
-        <button class="button" id="zero">0</button>
+        <button class="button num" id="zero">0</button>
         <button class="button" id="decimal">.</button>
         <button class="button" id="equal">=</button>
     </div>
