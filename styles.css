@@ -12,12 +12,14 @@ body {
     border-radius: 25px;
     background: linear-gradient(0deg, #f9f9f9fb 10%, #fdfdfdfb 15%, #ffffff);
     box-shadow: 5px 5px 10px #0000001a;
+    position: relative;
+    top: 10%;
 }
 
 .control-panel {
     width: inherit;
     height: 2.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 #display {
@@ -45,9 +47,9 @@ body {
 }
 
 .buttons {
-    margin: 7px 10px 5px 10px;
+    margin: 20px 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 5px;
     row-gap: 5px;
 }
@@ -64,17 +66,10 @@ body {
     font-weight: 300; 
 }
 
-.bot-buttons {
-    margin: 0 10px;
-    margin-bottom: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    column-gap: 5px;
-}
-
 #equal {
     width: 10rem;
     border-radius: 50px;
+    grid-column: 3 / span 2;
 }
 
 
