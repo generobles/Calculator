@@ -7,9 +7,27 @@ const equalsButton = document.getElementById('equal');
 const inputField = document.getElementById('input');
 const outputField = document.getElementById('output');
 
+checkbox.checked = false;
+
 checkbox.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+    if (checkbox.checked) {
+        document.body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.body.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+    }
 })
+
+window.onload = checkTheme();
+
+function checkTheme() {
+    const localStorageTheme = localStorage.getItem('theme');
+    if (localStorageTheme !== null && localStorageTheme === 'dark') {
+        document.body.className = localStorageTheme;
+        checkbox.checked = true;
+    }
+}
 
 function inputNumber(num) {
     inputField.innerHTML += num;
@@ -73,6 +91,32 @@ const add = (x, y) => { x + y; };
 const subtract = (x, y) => { x - y; };
 const multiply = (x, y) => { x * y; };
 const divide = (x, y) => { x / y; };
+
+function operate(operator, x, y) {
+    x = Number(x);
+    y = Number(y);
+    switch(operator) {
+        case '+':
+            return add(x,y);
+        case '-':
+            return subtract(x,y);
+        case '×':
+            return multiply(x,y);
+        case '÷':
+            if (y === 0) {
+                return 'undefined';
+            }
+            else if (x === 0 && y === 0) {
+                return 'infinity';
+            }
+            else {
+                return divide(x,y);
+            }
+        default:
+            return null;
+    }
+}
+
 
 numButtons.forEach((button) => {
     button.addEventListener('click', () => inputNumber(button.textContent))    
